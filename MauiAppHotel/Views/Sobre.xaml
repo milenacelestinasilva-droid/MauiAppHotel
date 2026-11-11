@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             BackgroundColor="#F5F0E8">
+
+    <VerticalStackLayout Padding="25"
+                         Spacing="20"
+                         VerticalOptions="Center">
+
+        <Label Text="MAUI APP HOTEL"
+               FontSize="30"
+               FontAttributes="Bold"
+               TextColor="#806044"
+               HorizontalOptions="Center"/>
+
+        <Label Text="Sobre o Aplicativo"
+               FontSize="23"
+               FontAttributes="Bold"
+               TextColor="#806044"
+               HorizontalOptions="Center"/>
+
+        <Border Padding="20"
+                BackgroundColor="White"
+                Stroke="#D8C7B2"
+                StrokeThickness="1">
+
+            <VerticalStackLayout Spacing="15">
+
+                <Label Text="Bem-vindo!"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#806044"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Este aplicativo foi desenvolvido para facilitar a contratação de hospedagens, permitindo selecionar a acomodação, informar a quantidade de hóspedes e escolher o período da estadia."
+                       FontSize="16"
+                       TextColor="#444444"
+                       HorizontalTextAlignment="Center"/>
+
+                <Label Text="Desenvolvedora:"
+                       FontAttributes="Bold"
+                       TextColor="#806044"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Milena Celestina da Silva"
+                       FontSize="17"
+                       HorizontalOptions="Center"
+                       TextColor="#444444"/>
+
+                <Label Text="Ano de desenvolvimento: 2026"
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       TextColor="#444444"/>
+
+            </VerticalStackLayout>
+
+        </Border>
+
+        <Button Text="Voltar"
+                BackgroundColor="#806044"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="50"
+                Clicked="OnVoltarClicked"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

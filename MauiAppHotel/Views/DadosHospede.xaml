@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.DadosHospede"
+             Title="Dados do Hóspede"
+             BackgroundColor="#F5F0E8"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="18">
+
+            <Label Text="MAUI APP HOTEL"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#C5A15B"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Dados do Hóspede"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#4A382B"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Preencha seus dados para continuar."
+                   FontSize="14"
+                   TextColor="#806044"
+                   HorizontalOptions="Center"/>
+
+            <Border Padding="20"
+                    BackgroundColor="White"
+                    Stroke="#C5A15B"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="INFORMAÇÕES PESSOAIS"
+                           FontAttributes="Bold"
+                           TextColor="#806044"/>
+
+                    <Label Text="Nome completo"
+                           TextColor="#4A382B"/>
+
+                    <Entry x:Name="txtNome"
+                           Placeholder="Digite seu nome completo"
+                           BackgroundColor="#F5F0E8"/>
+
+                    <Label Text="Telefone"
+                           TextColor="#4A382B"/>
+
+                    <Entry x:Name="txtTelefone"
+                           Placeholder="Digite seu telefone"
+                           Keyboard="Telephone"
+                           BackgroundColor="#F5F0E8"/>
+
+                    <Label Text="E-mail"
+                           TextColor="#4A382B"/>
+
+                    <Entry x:Name="txtEmail"
+                           Placeholder="Digite seu e-mail"
+                           Keyboard="Email"
+                           BackgroundColor="#F5F0E8"/>
+
+                    <Label Text="Documento (CPF)"
+                           TextColor="#4A382B"/>
+
+                    <Entry x:Name="txtCPF"
+                           Placeholder="Digite seu CPF"
+                           Keyboard="Numeric"
+                           BackgroundColor="#F5F0E8"/>
+
+                    <Button Text="CONTINUAR"
+                            BackgroundColor="#806044"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="12"
+                            HeightRequest="52"
+                            Clicked="OnContinuarClicked"/>
+
+                    <Button Text="VOLTAR"
+                            BackgroundColor="#C5A15B"
+                            TextColor="#4A382B"
+                            FontAttributes="Bold"
+                            CornerRadius="12"
+                            HeightRequest="48"
+                            Clicked="OnVoltarClicked"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="MAUI APP HOTEL • 2026"
+                   FontSize="12"
+                   TextColor="#806044"
+                   HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

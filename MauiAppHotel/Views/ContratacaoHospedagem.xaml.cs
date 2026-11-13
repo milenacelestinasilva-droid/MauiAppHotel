@@ -1,3 +1,4 @@
+
 namespace MauiAppHotel.Views;
 
 public partial class ContratacaoHospedagem : ContentPage
@@ -10,5 +11,10 @@ public partial class ContratacaoHospedagem : ContentPage
     private async void OnSobreClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Sobre());
+    }
+
+    private async void OnAvancarClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new DadosHospede());
     }
 }

@@ -74,13 +74,22 @@
 	  <Compile Update="Views\hospedagemContratada.xaml.cs">
 	    <DependentUpon>HospedagemContratada.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\DadosHospede.xaml.cs">
+	    <DependentUpon>DadosHospede.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\ConfirmacoReserva.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ContratacaoHospedagem.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HospedagemContratada.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\DadosHospede.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Sobre.xaml">

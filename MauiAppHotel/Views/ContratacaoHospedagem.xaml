@@ -2,120 +2,170 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
-             Title="ContratacaoHospedagem"
+             Title="Contratação de Hospedagem"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="#F5F0E8">
 
-    <VerticalStackLayout VerticalOptions="Center"
-                         Padding="10"
-                         Spacing="10">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="18">
 
-        <Label Text="Cálculo da Diária"
-               FontFamily="Kalam"
-               FontSize="40"
-               TextColor="#806044"
-               HorizontalOptions="Center" />
+            <!-- Cabeçalho -->
+            <VerticalStackLayout Spacing="5"
+                                 Margin="0,15,0,5">
 
-        <Border Padding="10">
-
-            <VerticalStackLayout Spacing="10">
-
-                <!-- Quantidade de hóspedes -->
-                <Grid RowDefinitions="Auto, Auto"
-                      ColumnDefinitions="*, *, 2*"
-                      RowSpacing="10">
-
-                    <Label Grid.Row="0"
-                           Grid.Column="0"
-                           Text="Adultos:" />
-
-                    <Label Grid.Row="0"
-                           Grid.Column="1"
-                           TextColor="#806044"
-                           Text="{Binding Value, Source={x:Reference stepperAdultos}}" />
-
-                    <Stepper Grid.Row="0"
-                             Grid.Column="2"
-                             x:Name="stepperAdultos"
-                             Minimum="0"
-                             Maximum="10"
-                             Increment="1" />
-
-                    <Label Grid.Row="1"
-                           Grid.Column="0"
-                           Text="Crianças:" />
-
-                    <Label Grid.Row="1"
-                           Grid.Column="1"
-                           TextColor="#806044"
-                           Text="{Binding Value, Source={x:Reference stepperCriancas}}" />
-
-                    <Stepper Grid.Row="1"
-                             Grid.Column="2"
-                             x:Name="stepperCriancas"
-                             Minimum="0"
-                             Maximum="10"
-                             Increment="1" />
-
-                </Grid>
-
-                <!-- Escolha da suíte -->
-                <Label Text="Escolha sua Suíte"
-                       FontSize="20"
+                <Label Text="MAUI APP HOTEL"
+                       FontSize="16"
                        FontAttributes="Bold"
+                       TextColor="#C5A15B"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Cálculo da Diária"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       TextColor="#4A382B"
+                       HorizontalOptions="Center"/>
+
+                <Label Text="Sua estadia começa aqui!"
+                       FontSize="15"
                        TextColor="#806044"
-                       HorizontalOptions="Center"
-                       Margin="0,10,0,0" />
-
-                <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação">
-                </Picker>
-
-                <!-- Período da estadia -->
-                <Border Padding="10"
-                        Margin="10">
-
-                    <VerticalStackLayout Spacing="10">
-
-                        <Label Text="Período da Estadia"
-                               FontAttributes="Bold" />
-
-                        <HorizontalStackLayout>
-                            <Label Text="Check-in:"
-                                   VerticalOptions="Center" />
-
-                            <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/yyyy" />
-                        </HorizontalStackLayout>
-
-                        <HorizontalStackLayout>
-                            <Label Text="Check-out:"
-                                   VerticalOptions="Center" />
-
-                            <DatePicker x:Name="dtpck_checkout"
-                                        Format="dd/MM/yyyy" />
-                        </HorizontalStackLayout>
-
-                        <Button Text="Avançar"
-                                BackgroundColor="#806044"
-                                TextColor="White"
-                                CornerRadius="10"
-                                FontAttributes="Bold"
-                                HeightRequest="50"/>
-                        <Button Text="Sobre o aplicativo"
-                                BackgroundColor="#B49A7C"
-                                TextColor="White"
-                                CornerRadius="10"
-                                Clicked="OnSobreClicked"/>
-
-                    </VerticalStackLayout>
-
-                </Border>
+                       HorizontalOptions="Center"/>
 
             </VerticalStackLayout>
 
-        </Border>
+            <!-- Cartão principal -->
+            <Border Padding="18"
+                    BackgroundColor="White"
+                    Stroke="#C5A15B"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18">
 
-    </VerticalStackLayout>
+                <VerticalStackLayout Spacing="18">
+
+                    <!-- Hóspedes -->
+                    <Label Text="QUANTIDADE DE HÓSPEDES"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="#806044"/>
+
+                    <Grid RowDefinitions="Auto,Auto"
+                          ColumnDefinitions="*,Auto"
+                          RowSpacing="15">
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Adultos:"
+                               FontSize="16"
+                               TextColor="#4A382B"
+                               VerticalOptions="Center"/>
+
+                        <HorizontalStackLayout Grid.Row="0"
+                                               Grid.Column="1"
+                                               Spacing="10">
+                            <Label Text="{Binding Value, Source={x:Reference stepperAdultos}}"
+                                   TextColor="#C5A15B"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"/>
+                            <Stepper x:Name="stepperAdultos"
+                                     Minimum="0"
+                                     Maximum="10"
+                                     Increment="1"/>
+                        </HorizontalStackLayout>
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="Crianças:"
+                               FontSize="16"
+                               TextColor="#4A382B"
+                               VerticalOptions="Center"/>
+
+                        <HorizontalStackLayout Grid.Row="1"
+                                               Grid.Column="1"
+                                               Spacing="10">
+                            <Label Text="{Binding Value, Source={x:Reference stepperCriancas}}"
+                                   TextColor="#C5A15B"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"/>
+                            <Stepper x:Name="stepperCriancas"
+                                     Minimum="0"
+                                     Maximum="10"
+                                     Increment="1"/>
+                        </HorizontalStackLayout>
+
+                    </Grid>
+
+                    <BoxView HeightRequest="1"
+                             BackgroundColor="#D8C7B2"/>
+
+                    <!-- Suíte -->
+                    <Label Text="ESCOLHA SUA SUÍTE"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="#806044"/>
+
+                    <Picker x:Name="pck_quarto"
+                            Title="Selecione sua acomodação"
+                            TextColor="#4A382B"
+                            TitleColor="#806044"
+                            BackgroundColor="#F5F0E8"/>
+
+                    <BoxView HeightRequest="1"
+                             BackgroundColor="#D8C7B2"/>
+
+                    <!-- Período -->
+                    <Label Text="PERÍODO DA ESTADIA"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="#806044"/>
+
+                    <Label Text="Data de entrada"
+                           TextColor="#4A382B"
+                           FontSize="14"/>
+
+                    <DatePicker x:Name="dtpck_checkin"
+                                Format="dd/MM/yyyy"
+                                TextColor="#806044"
+                                BackgroundColor="#F5F0E8"/>
+
+                    <Label Text="Data de saída"
+                           TextColor="#4A382B"
+                           FontSize="14"/>
+
+                    <DatePicker x:Name="dtpck_checkout"
+                                Format="dd/MM/yyyy"
+                                TextColor="#806044"
+                                BackgroundColor="#F5F0E8"/>
+
+                    <!-- Botões -->
+                    <Button Text="AVANÇAR"
+                    BackgroundColor="#806044"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    FontSize="16"
+                    HeightRequest="52"
+                    Clicked="OnAvancarClicked"/>
+
+                    <Button Text="Sobre o aplicativo"
+                            BackgroundColor="#C5A15B"
+                            TextColor="#4A382B"
+                            CornerRadius="12"
+                            FontAttributes="Bold"
+                            HeightRequest="48"
+                            Clicked="OnSobreClicked"/>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- Rodapé -->
+            <Label Text="MAUI APP HOTEL • 2026"
+                   FontSize="12"
+                   TextColor="#806044"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,15"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
